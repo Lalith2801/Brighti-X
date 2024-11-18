@@ -1,7 +1,7 @@
 import './globals.css'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Link from 'next/link'
+import ClientLayout from './client-layout'
+import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,18 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="bg-white shadow-sm">
-          <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-primary">TechTrain</Link>
-            <div className="space-x-4">
-              <Link href="/about" className="text-gray-600 hover:text-primary">About</Link>
-              <Link href="/services" className="text-gray-600 hover:text-primary">Services</Link>
-              <Link href="/careers" className="text-gray-600 hover:text-primary">Careers</Link>
-              <Link href="/login" className="text-gray-600 hover:text-primary">Login</Link>
-            </div>
-          </div>
-        </nav>
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   )
