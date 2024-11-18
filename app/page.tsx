@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronRight, Code, Database, Brain, BarChart } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -56,7 +57,13 @@ export default function HomePage() {
       <section className="container mx-auto px-4 py-20">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
-            <img src="/placeholder.svg?height=400&width=400" alt="About TechTrain" className="rounded-lg shadow-lg" />
+            <Image 
+              src="/placeholder.svg" 
+              alt="About TechTrain" 
+              width={400} 
+              height={400} 
+              className="rounded-lg shadow-lg"
+            />
           </div>
           <div className="md:w-1/2 md:pl-12">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">About TechTrain</h2>
