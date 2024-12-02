@@ -1,4 +1,5 @@
-"use client";
+'use client'
+
 import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
@@ -16,10 +17,10 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex items-center justify-center">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen bg-brightix-background flex items-center justify-center">
+      <Card className="w-full max-w-md bg-brightix-background border-brightix-highlight/20">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">Login to TechTrain</CardTitle>
+          <CardTitle className="text-2xl font-bold text-center text-brightix-text">Login to BrightiX</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -30,6 +31,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="bg-brightix-background text-brightix-text border-brightix-highlight/20"
               />
             </div>
             <div>
@@ -39,15 +41,16 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                className="bg-brightix-background text-brightix-text border-brightix-highlight/20"
               />
             </div>
-            <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button type="submit" className="w-full bg-brightix-highlight text-brightix-text hover:bg-brightix-highlight/90">
               Log In
             </Button>
           </form>
-          <div className="mt-4 text-center text-sm text-gray-600">
+          <div className="mt-4 text-center text-sm text-brightix-text/80">
             Don&apos;t have an account?{" "}
-            <Link href="/signup" className="text-primary hover:underline">
+            <Link href="/signup" className="text-brightix-highlight hover:underline">
               Sign up
             </Link>
           </div>

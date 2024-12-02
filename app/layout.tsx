@@ -1,13 +1,12 @@
 import './globals.css'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Link from 'next/link'
-import { ContentProvider } from './contexts/ContentContext'
+import ClientLayout from './client-layout'
+import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'TechTrain - Software Consulting and Training',
+  title: 'BrightiX - Software Consulting and Training',
   description: 'Launch your tech career with real-world experience',
 }
 
@@ -17,23 +16,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ContentProvider>
-          <nav className="bg-white shadow-sm">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-              <Link href="/" className="text-2xl font-bold text-primary">TechTrain</Link>
-              <div className="space-x-4">
-                <Link href="/about" className="text-gray-600 hover:text-primary">About</Link>
-                <Link href="/services" className="text-gray-600 hover:text-primary">Services</Link>
-                <Link href="/careers" className="text-gray-600 hover:text-primary">Careers</Link>
-                <Link href="/login" className="text-gray-600 hover:text-primary">Login</Link>
-                <Link href="/admin" className="text-gray-600 hover:text-primary">Admin</Link>
-              </div>
-            </div>
-          </nav>
-          {children}
-        </ContentProvider>
+    <html lang="en" className="dark">
+      <body className={`${inter.className} bg-[#202124] text-white`}>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   )
