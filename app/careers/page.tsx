@@ -21,7 +21,6 @@ function PositionCard({ title, description }: { title: string, description: stri
   )
 }
 
-
 export default function CareersPage() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -81,12 +80,24 @@ export default function CareersPage() {
                   description="Join our web development team and work on exciting projects using modern frameworks like React and Next.js."
                 />
                 <PositionCard 
-                  title="Data Science Intern"
-                  description="Dive into the world of data analytics and machine learning, working on real-world data sets and predictive models."
-                />
-                <PositionCard 
                   title="UI/UX Design Intern"
                   description="Help create stunning user interfaces and enhance user experiences for our client projects."
+                />
+                <PositionCard 
+                  title="Cybersecurity Intern"
+                  description="Secure systems and protect data with cutting-edge cybersecurity skills."
+                />
+                <PositionCard 
+                  title="AI & ML Intern"
+                  description="Work on machine learning models and AI projects with real-world applications."
+                />
+                <PositionCard 
+                  title="Cloud Intern"
+                  description="Gain experience with cloud computing platforms and services, such as Microsoft Azure."
+                />
+                <PositionCard 
+                  title="Web Technologies Intern"
+                  description="Master modern web development frameworks and tools, enhancing your technical skills."
                 />
               </div>
             </div>
@@ -140,7 +151,6 @@ export default function CareersPage() {
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Application'}
                 </Button>
-                
               </form>
             </div>
           </div>
