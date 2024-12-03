@@ -17,7 +17,7 @@ export default function ClientLayout({
       <nav className="bg-[#202124] border-b border-[#202124]/20 h-16 z-50 relative">
         <div className="container mx-auto flex items-center justify-between px-4 h-full">
           {/* Left Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center z-30">
             <Image 
               src="/logo4.svg" 
               alt="BrightiX Logo" 
@@ -28,21 +28,20 @@ export default function ClientLayout({
           </Link>
 
           {/* Center Image */}
-          <Link 
-            href="/" 
-            className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex h-full items-center"
-          >
-            <Image 
-              src="/logo2.svg" 
-              alt="Center Image" 
-              width={200} 
-              height={50} 
-              className="w-auto h-auto max-w-[180px]"
-            />
-          </Link>
+          <div className="absolute inset-0 flex justify-center items-center h-full pointer-events-none md:pointer-events-auto z-10">
+            <Link href="/" className="flex items-center">
+              <Image 
+                src="/logo2.svg" 
+                alt="Center Image" 
+                width={200} 
+                height={50} 
+                className="w-auto h-auto max-w-[180px]"
+              />
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden z-30">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white focus:outline-none"
@@ -53,14 +52,14 @@ export default function ClientLayout({
 
           {/* Navigation Links */}
           <div
-            className={`fixed top-16 left-0 w-full bg-[#202124] border-t border-[#202124]/20 p-4 md:static md:flex md:space-x-8 md:p-0 md:top-0 md:left-auto md:w-auto ${
+            className={`fixed top-16 left-0 w-full bg-[#202124] border-t border-[#202124]/20 p-4 md:static md:flex md:space-x-8 md:p-0 md:top-0 md:left-auto md:w-auto z-20 ${
               isMenuOpen ? 'block' : 'hidden'
             }`}
           >
             <Link
               href="/about"
               className="block md:inline-block text-white hover:text-[#A084DC] transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)} // Close menu on link click
+              onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
