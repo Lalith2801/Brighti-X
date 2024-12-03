@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronRight, Code, Database, Brain, BarChart } from 'lucide-react'
+import { ChevronRight, Code, Brain, BarChart, ShieldCheck, Cloud, Layers } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -43,7 +43,7 @@ export default function HomePage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center text-brightix-text animate-slideInUp animate-delay-2">
             Our Domains
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <DomainCard 
               icon={<Code className="h-8 w-8 md:h-10 md:w-10 text-brightix-highlight" />}
               title="Web Technologies"
@@ -55,14 +55,24 @@ export default function HomePage() {
               description="Dive into machine learning and AI applications"
             />
             <DomainCard 
-              icon={<Database className="h-8 w-8 md:h-10 md:w-10 text-brightix-highlight" />}
-              title="Data Analytics"
-              description="Learn to extract insights from complex datasets"
+              icon={<Layers className="h-8 w-8 md:h-10 md:w-10 text-brightix-highlight" />}
+              title="UI/UX"
+              description="Design intuitive user interfaces and seamless experiences"
+            />
+            <DomainCard 
+              icon={<ShieldCheck className="h-8 w-8 md:h-10 md:w-10 text-brightix-highlight" />}
+              title="Cybersecurity"
+              description="Secure systems and protect data with cutting-edge skills"
+            />
+            <DomainCard 
+              icon={<Cloud className="h-8 w-8 md:h-10 md:w-10 text-brightix-highlight" />}
+              title="Azure"
+              description="Gain expertise in Microsoft Azure cloud technologies"
             />
             <DomainCard 
               icon={<BarChart className="h-8 w-8 md:h-10 md:w-10 text-brightix-highlight" />}
-              title="Business Intelligence"
-              description="Develop skills in data visualization and reporting"
+              title="AI & ML"
+              description="Specialize in artificial intelligence and machine learning"
             />
           </div>
         </div>
