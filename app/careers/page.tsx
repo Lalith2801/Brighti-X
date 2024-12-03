@@ -95,10 +95,6 @@ export default function CareersPage() {
                   title="Cloud Intern"
                   description="Gain experience with cloud computing platforms and services, such as Microsoft Azure."
                 />
-                <PositionCard 
-                  title="Web Technologies Intern"
-                  description="Master modern web development frameworks and tools, enhancing your technical skills."
-                />
               </div>
             </div>
             <div>

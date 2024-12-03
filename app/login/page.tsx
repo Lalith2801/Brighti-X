@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from 'next/image'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -18,9 +19,21 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-brightix-background flex items-center justify-center">
-      <Card className="w-full max-w-md bg-brightix-background border-brightix-highlight/20">
+      <Card className="w-full max-w-md bg-brightix-background border-brightix-highlight/20 shadow-lg transform hover:scale-105 transition-transform duration-300">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center text-brightix-text">Login to BrightiX</CardTitle>
+          <div className="flex justify-center mb-4">
+            {/* Avatar Image */}
+            <Image
+              src="/Lalith.jpg" // Change this path as necessary
+              alt="User Avatar"
+              width={80}
+              height={80}
+              className="rounded-full border-4 border-brightix-highlight shadow-lg"
+            />
+          </div>
+          <CardTitle className="text-2xl font-bold text-center text-brightix-text animate-fadeIn animate-delay-0">
+            Login to BrightiX
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -44,7 +57,7 @@ export default function LoginPage() {
                 className="bg-brightix-background text-brightix-text border-brightix-highlight/20"
               />
             </div>
-            <Button type="submit" className="w-full bg-brightix-highlight text-brightix-text hover:bg-brightix-highlight/90">
+            <Button type="submit" className="w-full bg-brightix-highlight text-brightix-text hover:bg-brightix-highlight/90 transition-all duration-200">
               Log In
             </Button>
           </form>

@@ -78,65 +78,82 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="container mx-auto px-4 py-12 md:py-20 animate-fadeIn animate-delay-2">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="w-full md:w-1/2 mb-8 md:mb-0 animate-slideInLeft animate-delay-3">
-            <Image
-              src="/boy.gif"
-              alt="About BrightiX"
-              width={400}
-              height={400}
-              className="rounded-lg shadow-lg w-full h-auto"
-            />
-          </div>
-          <div className="w-full md:w-1/2 md:pl-12 animate-slideInRight animate-delay-4">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-brightix-text">
-              About BrightiX
-            </h2>
-            <p className="text-base md:text-lg mb-6 text-brightix-text/80">
-              BrightiX is dedicated to bridging the gap between academic learning and industry requirements. We offer hands-on experience through internships and real-world projects, helping students build impressive portfolios and gain the skills needed to excel in the tech industry.
-            </p>
-            <h3 className="text-lg font-semibold mb-4 text-brightix-text">
-              Why Choose Us:
-            </h3>
-            <ul className="list-disc list-inside text-brightix-text/80">
-              <li>100+ successful internship placements</li>
-              <li>Access to industry mentors</li>
-              <li>Project-based learning approach</li>
-            </ul>
-            <Link href="/about">
-              <Button
-                variant="outline"
-                className="w-full md:w-auto border-brightix-highlight text-brightix-highlight hover:bg-brightix-highlight hover:text-brightix-text mt-4"
-              >
-                Learn More About Us
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+  <section className="container mx-auto px-4 py-12 md:py-20 animate-fadeIn animate-delay-2">
+  <div className="flex flex-col md:flex-row items-center">
+    <div className="w-full md:w-1/2 mb-8 md:mb-0 animate-slideInLeft animate-delay-3">
+      {/* Video */}
+      <video 
+        src="/about.mp4" // Replace with your video path
+        className="rounded-lg shadow-lg w-full h-auto"
+        loop
+        
+        autoPlay
+        muted
+      />
+    </div>
+    <div className="w-full md:w-1/2 md:pl-12 animate-slideInRight animate-delay-4">
+      <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-brightix-text">
+        About BrightiX
+      </h2>
+      <p className="text-base md:text-lg mb-6 text-brightix-text/80">
+        BrightiX is dedicated to bridging the gap between academic learning and industry requirements. We offer hands-on experience through internships and real-world projects, helping students build impressive portfolios and gain the skills needed to excel in the tech industry.
+      </p>
+      <h3 className="text-lg font-semibold mb-4 text-brightix-text">
+        Why Choose Us:
+      </h3>
+      <ul className="list-disc list-inside text-brightix-text/80">
+        <li>100+ successful internship placements</li>
+        <li>Access to industry mentors</li>
+        <li>Project-based learning approach</li>
+      </ul>
+      <Link href="/about">
+        <Button
+          variant="outline"
+          className="w-full md:w-auto border-brightix-highlight text-brightix-highlight hover:bg-brightix-highlight hover:text-brightix-text mt-4"
+        >
+          Learn More About Us
+        </Button>
+      </Link>
+    </div>
+  </div>
+</section>
+
 
       {/* Testimonials Section */}
-      <section className="bg-[#202124] py-12 md:py-20 animate-fadeIn animate-delay-3">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#FFFFFF] animate-slideInUp animate-delay-0">
-            Hear From Our Students
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {["John", "Sarah", "David"].map((name, index) => (
-              <Card key={index} className="text-center bg-[#202124] border border-[#A084DC]/30 shadow-md animate-fadeIn animate-delay-1">
-                <CardContent className="p-6">
-                  <p className="italic text-[#FFFFFF]/80">
-                    "BrightiX helped me land my dream internship!"
-                  </p>
-                  <h4 className="mt-4 text-[#A084DC] font-semibold">{name}</h4>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+<section className="bg-[#202124] py-12 md:py-20 animate-fadeIn animate-delay-3">
+  <div className="container mx-auto px-4 text-center">
+    <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#FFFFFF] animate-slideInUp animate-delay-0">
+      Hear From Our Students
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { name: "John Doe", feedback: "BrightiX helped me land my dream internship!", avatar: "/avatar1.jpg" },
+        { name: "Sarah Williams", feedback: "The mentors and projects were top-notch!", avatar: "/avatar2.jpg" },
+        { name: "David Smith", feedback: "BrightiX prepared me for real-world challenges!", avatar: "/avatar3.jpg" },
+      ].map((testimonial, index) => (
+        <Card
+          key={index}
+          className="text-center bg-[#202124] border border-[#A084DC]/30 shadow-md transform hover:-translate-y-2 hover:shadow-lg transition-transform duration-300 animate-slideInUp animate-delay-1"
+        >
+          <CardContent className="p-6">
+            <div className="flex justify-center mb-4">
+              <Image
+                src={testimonial.avatar}
+                alt={`${testimonial.name} Avatar`}
+                width={80}
+                height={80}
+                className="rounded-full border-4 border-[#A084DC] shadow-lg"
+              />
+            </div>
+            <p className="italic text-[#FFFFFF]/80">{`"${testimonial.feedback}"`}</p>
+            <h4 className="mt-4 text-[#A084DC] font-semibold">{testimonial.name}</h4>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* CTA Section */}
       <section className="bg-brightix-highlight text-brightix-text py-12 md:py-20 animate-fadeIn animate-delay-4">
