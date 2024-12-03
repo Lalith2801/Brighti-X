@@ -1,8 +1,8 @@
-import { NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
-  const { name, email, resume, message } = await req.json()
+  const { name, email, resume, message } = await req.json();
 
   // Email configuration
   const transporter = nodemailer.createTransport({
@@ -15,13 +15,13 @@ export async function POST(req: Request) {
     },
     tls: {
       ciphers: 'SSLv3',
-      rejectUnauthorized: false
-    }
-  })
+      rejectUnauthorized: false,
+    },
+  });
 
   try {
     // Verify SMTP connection configuration
-    await transporter.verify()
+    await transporter.verify();
 
     // Send email
     await transporter.sendMail({
@@ -44,14 +44,25 @@ export async function POST(req: Request) {
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
-    })
+    });
 
-    return NextResponse.json({ message: 'Application submitted successfully' }, { status: 200 })
+    return NextResponse.json(
+      { message: 'Application submitted successfully' },
+      { status: 200 }
+    );
   } catch (error) {
-    console.error('Error submitting application:', error)
-    return NextResponse.json({ 
-      message: 'Failed to submit application. Please try again later.',
-      error: error.message
-    }, { status: 500 })
+    console.error('Error submitting application:', error);
+
+    // Type guard to check if `error` has a `message` property
+    const errorMessage =
+      error instanceof Error ? error.message : 'An unknown error occurred';
+
+    return NextResponse.json(
+      {
+        message: 'Failed to submit application. Please try again later.',
+        error: errorMessage,
+      },
+      { status: 500 }
+    );
   }
 }
