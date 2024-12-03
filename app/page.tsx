@@ -4,39 +4,13 @@ import Image from 'next/image'
 import { ChevronRight, Code, Brain, BarChart, ShieldCheck, Cloud, Layers } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import HeroSection from '@/components/HeroSection';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-brightix-background">
-      {/* Hero Section */}
-      <section className="relative container mx-auto px-4 py-12 md:py-20 text-center animate-fadeIn animate-delay-0" style={{ background: '#202124' }}>
-        <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 text-white animate-slideInUp animate-delay-0">
-          Launch Your Tech Career with Real-World Experience
-        </h1>
-        <p className="text-lg md:text-xl mb-6 md:mb-8 text-white opacity-80 animate-slideInUp animate-delay-1">
-          Gain valuable skills through internships and project-based learning
-        </p>
-        <div>
-          <Link href="/careers">
-            <Button
-              size="lg"
-              className="w-full md:w-auto"
-              style={{
-                backgroundColor: '#A084DC',
-                color: '#FFFFFF',
-                border: 'none',
-                padding: '12px 24px',
-                fontWeight: 'bold',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#9670D1')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#A084DC')}
-            >
-              Explore Opportunities <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
-        </div>
-      </section>
-
+    <div>
+      <HeroSection />
+      
       {/* Services Section */}
       <section className="bg-brightix-background/50 border-y border-brightix-highlight/20 py-12 md:py-20 animate-fadeIn animate-delay-1">
         <div className="container mx-auto px-4">
@@ -86,7 +60,6 @@ export default function HomePage() {
         src="/about.mp4" // Replace with your video path
         className="rounded-lg shadow-lg w-full h-auto"
         loop
-        
         autoPlay
         muted
       />

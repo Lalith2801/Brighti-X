@@ -112,3 +112,15 @@ body {
 .animate-delay-5 {
   animation-delay: 1s;
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#finisher-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
