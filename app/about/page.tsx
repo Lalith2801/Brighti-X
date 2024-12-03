@@ -56,6 +56,19 @@ export default function AboutPage() {
             </Link>
           </div>
 
+          {/* CEO Section */}
+          <div className="text-center mb-12">
+            <div className="w-28 h-28 rounded-full bg-brightix-highlight text-white flex items-center justify-center mx-auto mb-4 hover:shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+              <img
+                src="/ceo.jpg" // Replace with the correct image path
+                alt="B.S.M Somnath Chakravarthi"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
+            <p className="text-brightix-text/80 font-semibold">B.S.M Somnath Chakravarthi</p>
+            <p className="text-brightix-text/80">Founder & CEO</p>
+          </div>
+
           {/* Circle section for names, images, and roles */}
           <div className="grid grid-cols-3 gap-8 justify-items-center mb-12">
             <div className="text-center transform hover:scale-105 transition-all duration-300 ease-in-out">
