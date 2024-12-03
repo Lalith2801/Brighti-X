@@ -41,7 +41,7 @@ const HeroSection = () => {
         </p>
         <a
           href="/careers"
-          className="mt-6 inline-block px-6 py-3 text-lg font-semibold bg-brightix-highlight text-brightix-text rounded-lg hover:bg-brightix-highlight/90 transition-all"
+          className="mt-6 inline-block px-6 py-3 text-lg font-semibold bg-brightix-highlight text-brightix-text rounded-lg transition-all duration-300 ease-in-out transform hover:bg-brightix-highlight/90 hover:scale-105"
         >
           Explore Opportunities
         </a>
