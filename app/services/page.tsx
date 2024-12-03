@@ -1,5 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle } from 'lucide-react'
+"use client";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CheckCircle } from 'lucide-react';
 
 export default function ServicesPage() {
   const services = [
@@ -23,7 +25,7 @@ export default function ServicesPage() {
       description: "Receive personalized career advice and support in your job search process.",
       features: ["Resume building", "Interview preparation", "Networking opportunities"]
     }
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-brightix-background">
@@ -31,7 +33,10 @@ export default function ServicesPage() {
         <h1 className="text-3xl md:text-4xl font-bold mb-12 text-center text-brightix-text">Our Services</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="bg-brightix-background border-brightix-highlight/20">
+            <Card
+              key={index}
+              className="transform transition-all duration-700 ease-in-out bg-brightix-background border-brightix-highlight/20 hover:scale-105 hover:shadow-xl hover:bg-brightix-highlight/10"
+            >
               <CardHeader>
                 <CardTitle className="text-brightix-text">{service.title}</CardTitle>
               </CardHeader>
@@ -51,5 +56,5 @@ export default function ServicesPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
